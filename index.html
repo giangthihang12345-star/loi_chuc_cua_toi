@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi anh Khánh 💗</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg,#ffe0ed,#fff1f6,#f8cde0);
+  font-family: Georgia, serif;
+  color: #a74770;
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 23px;
+  text-align: center;
+  background: rgba(255,255,255,.88);
+  border: 2px solid #f7c1d7;
+  border-radius: 28px;
+  box-shadow: 0 12px 35px #c76b9440;
+  position: relative;
+  z-index: 2;
+}
+
+.small { font-size: 14px; letter-spacing: 3px; }
+.envelope { font-size: 75px; margin: 15px 0; }
+
+h1 {
+  color: #d45b91;
+  font-size: 29px;
+}
+
+button {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#ed9fbe,#d979a3);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #d979a355;
+}
+
+#letter {
+  display: none;
+  text-align: left;
+  line-height: 1.9;
+  animation: appear 1.2s ease;
+}
+
+#letter h2 {
+  text-align: center;
+  color: #d45b91;
+}
+
+#letter p { margin: 15px 0; }
+
+.signature {
+  text-align: right;
+  color: #d45b91;
+  font-style: italic;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: fly 5s linear forwards;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes fly {
+  to {
+    transform: translateY(-110vh) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #cf83a5;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+  <div class="small">A LITTLE SURPRISE FOR YOU</div>
+  <div class="envelope">💌</div>
+
+  <h1>Gửi anh Khánh ♡</h1>
+  <p>Hôm nay có một điều đặc biệt muốn gửi đến anh...</p>
+  <p>🎀 Một món quà nhỏ đang chờ được mở 🎀</p>
+
+  <button onclick="openLetter()">Mở thư ngay 💗</button>
+
+  <div id="letter">
+    <h2>Happy Men's Day! 🌷</h2>
+
+    <p><b>Gửi anh Khánh,</b></p>
+
+    <p>
+      Nhân ngày 19/11 - Ngày Quốc tế Đàn ông,
+      chúc anh luôn mạnh khỏe, sự nghiệp thăng hoa,
+      tiền vào như nước, tình duyên thì đỏ như son.
+    </p>
+
+    <p>
+      Lúc nào cũng phải giữ vững phong độ đẹp trai,
+      ga lăng và mặn mà như bây giờ nhá.
+    </p>
+
+    <p>
+      Đặc biệt phải nhớ là chờ tui:)))
+      liu liu 🤭
+    </p>
+
+    <div style="text-align:center;font-size:32px">
+      🌸 💗 🎀 💗 🌸
+    </div>
+
+    <p class="signature">
+      Thân gửi từ một người đặc biệt ♡
+    </p>
+  </div>
+
+  <div class="footer">Made with love ♡ 19.11</div>
+</div>
+
+<script>
+function openLetter() {
+document.getElementById("letter").style.display = "block";
+
+  for(let i=0;i<35;i++) {
+    let h=document.createElement("div");
+    h.className="heart";
+    h.textContent=["💗","💕","🌸","♡","🎀"][i%5];
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(18+Math.random()*20)+"px";
+    h.style.animationDelay=Math.random()*2+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),7000);
+  }
+}
+</script>
+</body>
+</html>
